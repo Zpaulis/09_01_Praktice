@@ -1,0 +1,24 @@
+package lv.romstr.mobile.rtu_android.main
+
+import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_main.*
+import lv.romstr.mobile.rtu_android.R
+import lv.romstr.mobile.rtu_android.chat.ChatSendActivity
+import lv.romstr.mobile.rtu_android.clicker.ClickerActivity
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        mainButtonClicker.setOnClickListener {
+            startActivity(Intent(this, ClickerActivity::class.java))
+        }
+
+        mainButtonChat.setOnClickListener {
+            startActivity(Intent(this, ChatSendActivity::class.java))
+        }
+    }
+}
